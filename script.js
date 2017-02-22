@@ -6,7 +6,7 @@ $(document).ready(function() {
             history.replaceState(data, "", window.location.href);
         });
     } else {
-        let hash = window.location.hash.replace(/#\//g, '');
+        let hash = window.location.hash.replace(/#\//g, "");
         $.getJSON("json/" + hash + ".json", function(data) {
             changeContent(hash, data);
             history.replaceState(data, "", window.location.href);
@@ -14,9 +14,9 @@ $(document).ready(function() {
     }
 
 
-    $('a[href]').click(function() {
+    $("a[href]").click(function() {
         let href = $(this).attr("href");
-        let hash = href.replace(/#\//g, '');
+        let hash = href.replace(/#\//g, "");
         $(this).siblings().removeClass("active");
         $(this).addClass("active");
         $.getJSON("json/" + hash + ".json", function(data) {
@@ -26,9 +26,9 @@ $(document).ready(function() {
         });
     });
 
-    $(window).on('popstate', function(event) {
+    $(window).on("popstate", function(event) {
         let state = event.originalEvent.state;
-        let url = (window.location.hash) ? window.location.hash.replace(/#\//g, '') : "home";
+        let url = (window.location.hash) ? window.location.hash.replace(/#\//g, "") : "home";
         if (state) {
             changeContent(url, state);
             $("a[href*=" + url + "]").siblings().removeClass("active");
@@ -38,7 +38,7 @@ $(document).ready(function() {
 
     function changeContent(name, data) {
         $("#wrapper").empty();
-        $('#' + name + 'Tmpl').tmpl(data).appendTo('#wrapper');
+        $("#" + name + "Tmpl").tmpl(data).appendTo("#wrapper");
         if (name == "galery") {
             makeGalery();
         }
@@ -50,9 +50,9 @@ $(document).ready(function() {
     }
 
     function makeGalery() {
-        $('.galery').magnificPopup({
-            delegate: 'a',
-            type: 'image',
+        $(".galery").magnificPopup({
+            delegate: "a",
+            type: "image",
             gallery: {
                 enabled: true
             }
