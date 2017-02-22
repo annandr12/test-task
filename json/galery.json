@@ -1,0 +1,35 @@
+{ "images":[
+  {
+        "url": "img/1.jpg",
+        "description": "Виды России"
+    },
+    {
+        "url": "img/2.jpg",
+        "description": "Бабочка присела отдохнуть"
+    },
+    {
+        "url": "img/3.jpg",
+        "description": "А вот так цветет чеснок"
+    },
+    {
+        "url": "img/4.jpg",
+        "description": "Ромашки в саду у бабушки"
+    },
+    {
+        "url": "img/5.jpg",
+        "description": "Берлинская телебашня"
+    },
+    {
+        "url": "img/6.jpg",
+        "description": "Тоже что-то в Берлине"
+    },
+    {
+        "url": "img/7.jpg",
+        "description": "Мемориал жертвам холокоста"
+    },
+    {
+        "url": "img/8.jpg",
+        "description": "Корова в поле сфотографированая на из машины на ходу"
+    }
+]
+}
