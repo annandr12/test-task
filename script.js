@@ -36,12 +36,18 @@ $(document).ready(function() {
         }
     });
 
-    function changeContent(name, data) {
+    function changeContent(name, obj) {
         $("#wrapper").empty();
-        $("#" + name + "Tmpl").tmpl(data).appendTo("#wrapper");
-        if (name == "galery") {
-            makeGalery();
-        }
+
+        let markup;
+        $.get("template/" + name + "Tmpl.html", function(data) {
+            markup = data;
+            $.template(name + "Tmpl", markup);
+            $.tmpl(name + "Tmpl", obj).appendTo("#wrapper");
+            if (name == "galery") {
+                makeGalery();
+            }
+        });
         document.title = capitalizeFirstLetter(name);
     }
 
